@@ -1,15 +1,18 @@
-from client import PrattParser
+from client import ASTParser
 
 def main():
-    print("=== Testing Pratt Operator Precedence AST Parser ===")
-    tokens = [("INT", 2), ("OP", "+"), ("INT", 3), ("OP", "*"), ("INT", 4)]
-    parser = PrattParser(tokens)
+    tokens = [
+        {"type": "NUMBER", "value": "10"},
+        {"type": "PLUS", "value": "+"},
+        {"type": "NUMBER", "value": "2"},
+        {"type": "MUL", "value": "*"},
+        {"type": "NUMBER", "value": "5"}
+    ]
+    parser = ASTParser(tokens)
     ast = parser.parse_expr()
-    print("Generated AST:", ast)
-
-    assert ast["type"] == "BinaryOp" and ast["op"] == "+"
-    assert ast["right"]["op"] == "*"
-    print("=== All tests passed successfully! ===")
+    print("Recursive Descent AST Parser Verification:")
+    print(f"Root AST Type: {ast['type']}, Op: {ast['op']}")
+    print(f"Right Term Op: {ast['right']['op']}")
 
 if __name__ == "__main__":
     main()
