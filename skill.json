@@ -1,17 +1,9 @@
 {
+  "schema_version": "v1",
   "name": "genpark-recursive-descent-ast-parser-skill",
   "version": "1.0.0",
-  "description": "Pratt top-down operator precedence expression and AST parser generating structured Abstract Syntax Trees with binding power resolution.",
-  "main": "client.py",
+  "description": "Recursive descent Abstract Syntax Tree (AST) parser supporting precedence climbing and JSON AST output.",
+  "entrypoint": "client.py",
   "mcp_server": "mcp_server.py",
-  "topics": [
-    "genpark-skill",
-    "agentic-ai",
-    "pratt-parser",
-    "ast",
-    "compiler",
-    "operator-precedence",
-    "syntax-analysis"
-  ],
-  "dependencies": []
+  "category": "Service"
 }
